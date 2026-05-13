@@ -47,9 +47,10 @@ A generated `.specs/[NN]_[feature_name]_spec.md` file uses this exact section or
 2. **Requirements Document** (§5).
 3. **Plan Document** (§6).
 4. **Task List Document** (§7) — appended only after the spec is approved at the gate in §2 phase 4.
-5. **Traceability Matrix** (§8) — always at the end of the spec.
+5. **Short Summary** (§7.5) — appended together with the Task List, between the Task List Document and the Traceability Matrix.
+6. **Traceability Matrix** (§8) — always at the end of the spec.
 
-The first draft contains sections 1, 2, 3, and 5. The Task List section is added later at the approval gate.
+The first draft contains sections 1, 2, 3, and 6. The Task List and Short Summary sections are added together later at the approval gate.
 
 ---
 
@@ -298,6 +299,22 @@ The Task List must include tasks for:
 - Writing every test from Testing Strategy.
 - Running final verification commands, including relevant test, lint, build, or manual QA checks.
 
+### 7.5 Short Summary
+
+After the Task List Document, the agent must append a `## Short Summary` section to the generated spec file. It appears between the Task List Document (§7) and the Traceability Matrix (§8) in the generated `.specs/[NN]_[feature_name]_spec.md`.
+
+The Short Summary is written for a human reader — typically a developer, reviewer, or stakeholder who wants to understand what the spec is about in under a minute, without reading the full Requirements and Plan sections.
+
+Requirements:
+
+- **Length** — 3–6 short sentences, or a 4–6 item bullet list. No long paragraphs.
+- **Audience** — human reader, plain language. No `REQ-NNN`, `DES-NNN`, `TASK-NNN`, or `AC-NNN` references.
+- **Content** — cover, in plain terms: what the feature does, who it is for, why it is being built, and the high-level approach. Optionally one sentence on what is explicitly out of scope.
+- **Tone** — clear, simple, and professional. Avoid jargon and internal acronyms unless already defined in the spec.
+- **Source of truth** — the summary describes the spec; the spec is not derived from the summary. If the summary and the body disagree, the body wins and the summary must be updated.
+
+This section is informational only and is not part of the Traceability Matrix.
+
 ---
 
 ## 8. Traceability Matrix
@@ -529,6 +546,12 @@ assumptions:
 
 - [ ] **TASK-001** [setup] <single concrete action>. Paths: `<path>`. Implements: `REQ-001`, `DES-001`. Verifies: `N/A`. Depends: `None`. Done when: <observable completion condition>.
 - [ ] **TASK-002** [test] <single concrete test action>. Paths: `<path>`. Implements: `REQ-001`, `DES-001`. Verifies: `TEST-001` covering `AC-001`, `AC-002`. Depends: `TASK-001`. Done when: <exact command or manual check passes>.
+
+---
+
+## Short Summary
+
+<3–6 sentence plain-language description of what this feature spec is about, who it is for, why it is being built, and the high-level approach. No requirement, design, task, or AC IDs.>
 
 ---
 
