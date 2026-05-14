@@ -66,8 +66,6 @@ week=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 if [ -n "$week" ]; then
   week_int=$(printf "%.0f" "$week")
   output="${output}${sep}$(make_bar "$week_int" "$WEEK_BAR_WIDTH" "Weekly:")"
-else
-  output="${output}${sep}Weekly:--"
 fi
 
 printf "%b" "$output"
