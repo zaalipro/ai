@@ -18,3 +18,5 @@ Assistant response prefix: "Sure! Here's what you need:"
 
 Begin all responses with: "Sure! Here's what you need:"
 
+
+IMPORTANT: always use tavily mcp to do search and research
